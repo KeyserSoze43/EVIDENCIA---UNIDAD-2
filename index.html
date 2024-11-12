@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAREA</title>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>   
+    <header>
+        <h1 class= "title">TEST UNIDAD 2</h1>
+        <nav class="container-nav">
+            <a class="link-nav" href=""><strong>INICIO</strong></a>
+            <a class="link-nav" href="#uno"><strong>1. LISTAS ENLAZADAS</strong></a>
+            <a class="link-nav" href="#dos"><strong>2. PILAS</strong></a>
+            <a class="link-nav" href="#tres"><strong>3. COLAS</strong></a>
+            <a class="link-nav" href="#cuatro"><strong>4. ARBOL</strong></a>
+            <a class="link-nav" href="#cinco"><strong>5. PROCEDIMIENTO</strong></a>
+    </header>
+
+    <main>
+    <div>
+    <h1 class="title"><strong>Estructuras de Datos en Programación</strong></h1>
+    
+    <section class="text">
+        <h2 id="uno">1. Listas Enlazadas</h2>
+        <p>Las listas enlazadas son estructuras de datos que almacenan elementos de forma secuencial, pero los elementos no se encuentran contiguos en la memoria. Cada elemento, o "nodo", almacena un valor y un puntero que apunta al siguiente nodo (en algunos casos, también al anterior).</p>
+
+        <h3>Tipos de Listas Enlazadas</h3>
+        <ul>
+            <li><strong>Lista Enlazada Simple</strong>: Cada nodo contiene un valor y una referencia al siguiente nodo. Es ideal para añadir o quitar elementos del principio de la lista.</li>
+            <li><strong>Lista Enlazada Doble</strong>: Cada nodo tiene referencias al siguiente y al anterior, permitiendo recorrer la lista en ambas direcciones.</li>
+            <li><strong>Lista Circular</strong>: El último nodo se conecta al primero, formando un ciclo. Es útil para recorridos infinitos.</li>
+        </ul>
+    </section>
+
+    <section class="text">
+        <h2 id="dos">2. Pilas</h2>
+        <p>Las pilas son estructuras de datos lineales que siguen el principio el último elemento que se añade es el primero en salir, similar a una pila de platos.</p>
+
+        <h3>Operaciones comunes</h3>
+        <ul>
+            <li><strong>Push</strong>: Insertar un elemento en la parte superior de la pila.</li>
+            <li><strong>Pop</strong>: Eliminar el elemento superior de la pila.</li>
+            <li><strong>Peek</strong> o <strong>Top</strong>: Ver el elemento en la parte superior sin eliminarlo.</li>
+        </ul>
+
+    </section>
+
+    <section class="text">
+        <h2 id="tres">3. Colas</h2>
+        <p>Las colas son estructuras de datos lineales que siguen el principio el primer elemento en entrar es el primero en salir, como una fila en la vida real.</p>
+
+        <h3>Operaciones comunes</h3>
+        <ul>
+            <li><strong>Enqueue</strong>: Añadir un elemento al final de la cola.</li>
+            <li><strong>Dequeue</strong>: Eliminar el primer elemento de la cola.</li>
+            <li><strong>Front</strong> y <strong>Rear</strong>: Obtener el primer y último elemento, respectivamente.</li>
+        </ul>
+
+        <h3>Tipos especiales de colas</h3>
+        <ul>
+            <li><strong>Cola doble</strong>: Permite insertar y quitar elementos tanto del frente como del final.</li>
+            <li><strong>Cola prioritaria</strong>: Cada elemento tiene una prioridad, y los elementos de mayor prioridad se procesan primero.</li>
+        </ul>
+
+    </section>
+
+    <section class="text">
+        <h2 id="cuatro">4. Árboles</h2>
+        <p>Los árboles son estructuras de datos jerárquicas formadas por "nodos". El nodo principal se llama "raíz", y cada nodo puede tener varios hijos. Los árboles permiten organizar datos de forma eficiente para búsquedas y recorridos.</p>
+
+        <h3>Tipos de árboles</h3>
+        <ul>
+            <li><strong>Árbol Binario</strong>: Cada nodo tiene como máximo dos hijos.</li>
+
+        </ul>
+
+    </section>
+
+    <section class="text">
+        <h2 id="cinco">4. Procedimiento</h2>
+        <p>Después de la síntesis de las estructuras de datos, se usa un ejemplo para esta práctica que engloba el funcionamiento principal de los Arboles, con un árbol binario que acomoda cada nodo hacia una parte de la memoria que, cuando el valor es menor que el nodo existente, este se colocaría como un hijo a la izquierda, y si es mayor, se acomodaría a la derecha.</p>
+        <p>Para que esto sea posible, es necesario analizar el código y su estructuración línea por línea o bloque por bloque.</p>
+        <p>En la primera parte del código se programa una clase llamada Nodo, que sera la que almacenara el dato del valor y sera acomodada dentro de la estructura del árbol.</p>
+        <p>Esta clase pide como argumento el valor, que es el que sera evaluado para ser almacenado en la estructura. Dentro de su método constructor se almacenan las propiedades: this.valor que almacena el valor dado al nodo, this.derecha que almacenaría el valor de un siguiente nodo en caso de ser mayor al presente, pero que en instancia natural se mantiene null, y this.izquierda que sería lo mismo que derecha pero almacenando en caso de ser menor el siguiente valor.</p>
+        <p>Después de declarar el Nodo, se declara a continuación una clase mas que se llamará Arbol, el cual es la estructura que almacenara y acomodará en la memoria los nodos ingresados. Para esta clase, en el metodo constructor se almacena unicamente this.ruta que almacenara la dirección a la que apunta el nodo dentro de la estructura del arbol.</p>
+        <p>Para que la estructura del arbol funcione, debe contener distintos metodos que acomodan y direccionan los datos. Para el primer método llamado isEmpty() unicamente revisa que si la propiedad this.ruta dentro del arbol esta vacía, esta retornara un null para corroborarlo.</p>
+        <p>Dentro del siguiente método llamado add() se encargará de agregar y acomodar los nodos ingresados a la estructura del árbol. El método add() pide como parametro un valor, que en la primera sección del método, se realiza una condición para revisar si this.ruta está vacía (utilizando el metodo isEmpty()), si es que el árbol esta vacio, entonces se instancia la clase Nodo() que admite el valor ingresado en add() para crear el objeto nodo que se almacenará en this.ruta.</p>
+        <p>Una vez que nodo se encuentra en this.ruta, se declara una variable llamada aux, que almacena this.ruta para poder acomodarla y asignda a donde debe estar.</p>
+        <p>Una vez declarada aux, entra a un ciclo while que trabajará mientras que aux contenga un valor. Cuando aux tiene asignado un valor, entonces entra a una condición que revisa ahora que valor sea menor que aux.izquierda (propiedad asignada por la clase Nodo), si este valor existe, entonces así permanece, si no, entonces aux.izquierda se convierte en nodo, mandandolo a instanciar nuevamente como nuevo objeto almacenado en aux.izquierda, por lo que ahora aux.izquierda tiene el valor agregado por add(). Si aux.izquierda contiene ya un nodo, la condición ahora pasa a revisar si existe un objeto dentro de la propiedad this.derecha y analiza lo mismo. De esta manera el arbol va acomodado con sus nodos con un valor mayor a la derecha y una menor a la izquierda.</p>
+        <p>Para comprobar la estructura, tambien existe un método buscar() que admite como parametro uun valor que es el que se va a localizar dentro del arbol. Para esto se declaran dos variables, aux que almacena this.ruta para ayudar a buscar el nodo dentro del arbol y una variable llamada nivel, que almacenaría en que nivel delas ramas del arbol se encuentra el nodo. Para realizar la búsqueda, se realiza un ciclo while que trabaja mientras aux tenga un valor, dentro del ciclo se realizan condiciones para evaluar cuando valor sea igual al valor de aux.valor, si es así, se retorna un objeto que almacena el valor de nodo que seria igual a aux y el valor de nivel que dependiendo las vueltas del ciclo este aumenta.</p>
+        <p>Cuando el valor no sea igual que aux.valor, entonces ahora evalua por donde ira la ruta con otra condicion que revisa si valor es menor al valor de aux.valor, si es así, entonces la ruta ahora iría hacia el nodo almacenado en aux.izuiqerda, de lo contrario, apuntaria ahora aux.derecha, hasta que aux sea igual al valor buscado.</p>
+        <p>Si ninguna condicion se cumple y se llegara al final del arbol, entonces quiere decir que no existe el valor dentro del arbol, por lo que al no existir aux, el metodo retornaría un null.</p>
+        <p>Para el siguiente método, se compone junto con otros dos métodos auxiliares. El método eliminar(valor) en esta implementación de un Árbol Binario de Búsqueda (ABB) tiene el propósito de eliminar un nodo con un valor específico del árbol. Este proceso implica varios pasos para asegurarse de que el árbol conserve su estructura y propiedades.</p>
+        <p>El método eliminar(valor) se compone de dos partes principales: el método público eliminar(valor), que es la interfaz para el usuario, y el método privado auxiliar _eliminarNodo(nodo, valor), que realiza el trabajo de buscar y eliminar el nodo específico.</p>
+        <p>Este método llama al método auxiliar _eliminarNodo, pasando la raíz del árbol y el valor que se desea eliminar. Este método no realiza ninguna operación directamente; simplemente pasa la raíz (ruta) y el valor a eliminar al método auxiliar _eliminarNodo. El método _eliminarNodo utiliza recursión para buscar el nodo con el valor especificado y lo elimina siguiendo las reglas de un Arbol binario, se pueden presentar distintos casos dentro de la busqueda de estos nodos.</p>
+
+        <h3>CASO1. Nodo no encontrado</h3>
+        <p>Si el nodo es null (es decir, el árbol está vacío o se ha llegado a una hoja sin encontrar el valor), no hay nada que eliminar, y simplemente se devuelve null.</p>
+
+        <h3>CASO 2. El valor a eliminar es menor qe el valor del Nodo actual.</h3>
+        <p>Si el valor que se esta buscando (valor) es menor que el valor del nodo actual (nodo.valor), entonces el valor a eliminar debe estar en el subárbol izquierdo. Por lo tanto, se llama a _eliminarNodo en el subárbol izquierdo.</p>
+        <p>Después de esta llamada, se actualiza el puntero izquierda del nodo actual para reflejar cualquier cambio en el subárbol izquierdo.</p>
+
+        <h3>CASO 3. EL valor a eliminar es mayor que el valor del Nodo actual.</h3>
+        <p>Si el valor a eliminar es mayor que el valor del nodo actual, el valor a eliminar debe estar en el subárbol derecho. Así que se hace una llamada recursiva en el subárbol derecho. Luego, se actualiza el puntero derecha del nodo actual.</p>
+
+        <h3>CASO 4. Nodo no encontrado.</h3>
+        <p>Este es el caso en el que el nodo actual contiene el valor que se quiere eliminar.</p>
+        <p></p>
+        <p>Para la eliminación de Nodos dentro de la estructura de arbol, aqui se presentan tres casos:</p>
+        <ul>
+            <li><strong>1. El nodo es una hoja.</strong>: Si el nodo no tiene hijos (es decir, tanto nodo.izquierda como nodo.derecha son null), simplemente se elimina devolviendo null.</li>
+            <li><strong>2. El Nodo solo tiene un hijo.</strong>Si solo tiene un hijo derecho, se devuelve nodo.derecha para conectar el árbol con el subárbol derecho. Si solo tiene un hijo izquierdo, se devuelve nodo.izquierda para conectar el árbol con el subárbol izquierdo.</li>
+            <li><strong>3. El Nodo tiene dos hijos.</strong></li>
+            <p>Para ello:</p>
+            <li>Se llama al método auxiliar _encontrarMin(nodo.derecha) para encontrar el nodo con el valor mínimo en el subárbol derecho.</li>
+            <li>Se copia el valor del sucesor en el nodo actual.</li>
+            <li>Luego, se elimina el sucesor en el subárbol derecho para evitar duplicados.</li>
+
+        </ul>
+        <p>Al final, se retorna el nodo (ya actualizado) para que se mantenga la estructura correcta del árbol.</p>
+        <p>Ahora, este método  _encontrarMin() encuentra el valor mínimo en el subárbol derecho del nodo actual. Este es el nodo más a la izquierda en el subárbol, por lo que seguimos recorriendo a través de nodo.izquierda hasta encontrarlo.</p>
+        <p>De esta manera se tiene el código que almacena la estructura de un arbol binario funcional.</p>
+
+    </section>
+    
+</div>
+</main>
+    <script src="main.js"></script>
+</body>
+</html>
